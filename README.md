@@ -93,6 +93,48 @@ An interactive Javascript terminal will start.
         
         web3.eth.getTransactionReceipt(‘YOUR_TRANSACTION_HASH’)
 
-Take note of the contract address, you’ll need it later.
+*Take note of the contract address, you’ll need it later.*
 Awesome. You have successfully deployed a contract on the private blockchain!
 
+## 4. Interacting with the Deployed Contract
+1. Open 2 more separate terminals to run the different nodes. Navigate to your Quorum folder workspace and
+run Vagrant just like what you did on the previous exercise. As a review, you would have issued the
+following commands:
+
+        cd YOUR_WORKSPACE_FOLDER/quorum-examples
+        vagrant ssh
+        cd quorum-examples/7nodes
+
+In terminal 2, run node 2:
+
+        geth attach ipc:qdata/dd2/geth.ipc
+In terminal 3, run node 7:
+
+        geth attach ipc:qdata/dd7/geth.ipc
+
+2. After that, in each terminal, including the previous terminal 1, define the contract:
+
+        var contractAddress = "YOUR_CONTRACT_ADDRESS"
+        var abi =
+        [{"constant":true,"inputs":[],"name":"storedData","outputs":[{"name":"","type":"uint
+        256"}],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"x","t
+        ype":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"cons
+        tant":true,"inputs":[],"name":"get","outputs":[{"name":"retVal","type":"uint256"}],"
+        payable":false,"type":"function"},{"inputs":[{"name":"initVal","type":"uint256"}],"t
+        ype":"constructor"}];
+        var contract = eth.contract(abi).at(contractAddress)
+        
+Looking good so far? Awesome!
+
+3. Now go to terminal 1 and call the get() method of the contract.
+
+        contract.get()
+The output will be 42.
+
+4. Interact with the contract by calling the **set()** function. Use the **first** terminal.
+To make things more interesting, use the **privateFor** option to make a private transaction that only the **first**
+and **seventh** node can see.
+ROAZBWtSacxXQrOe3FGAqJDyJjFePR5ce4TSIzmJ0Bc= is derived from the public key of the **seventh** node. It can
+be found in **quorum-examples/7nodes/keys/tm7.pub**
+        
+        contract.set(1234,{from:eth.coinbase,privateFor:["ROAZBWtSacxXQrOe3FGAqJDyJjFePR5ce4TSIzmJ0Bc="]});

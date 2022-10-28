@@ -138,3 +138,16 @@ ROAZBWtSacxXQrOe3FGAqJDyJjFePR5ce4TSIzmJ0Bc= is derived from the public key of t
 be found in **quorum-examples/7nodes/keys/tm7.pub**
         
         contract.set(1234,{from:eth.coinbase,privateFor:["ROAZBWtSacxXQrOe3FGAqJDyJjFePR5ce4TSIzmJ0Bc="]});
+
+After the **set()** interaction, run **contract.get()** on each terminal:
+The **first** terminal the output will be.
+
+        Output : 1234
+If you open the second terminal, the output will be zero, because the data is hidden for him:
+
+        Output : 0
+If you open the third terminal where we allow access to the transaction, you will see the number that we expect.
+
+        Output : 1234
+        
+### Congratulations! You've completed the exercise!

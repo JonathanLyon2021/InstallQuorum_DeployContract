@@ -18,7 +18,7 @@ You may find that the instructions are primarily directed for Windows OS, if you
 the instructions should still be relatively similar especially on installation of required exercise dependencies. Do not
 hesitate to reach out to the course platform if you are encountering any issues.
 
-# 1. Install VirtualBox
+## 1. Install VirtualBox
 1. We will use VirtualBox to create an instance of the private blockchain. Download VirtualBox from here
 https://www.virtualbox.org/wiki/Download_Old_Builds_6_1 and choose the version of your OS.
 2. Run the installer wizard and press next.
@@ -28,3 +28,18 @@ https://www.virtualbox.org/wiki/Download_Old_Builds_6_1 and choose the version o
 4. Choose the options that you want for your VirtualBox setup.
 
 5. Accept any succeeding prompts to continue with the installation.
+
+## 2. Install Vagrant
+1. Go to https://releases.hashicorp.com/vagrant/2.2.7/ and download Vagrant for your OS.
+If you encounter this after clicking on the installer file, click **More Info** and **Run Anyway:**
+
+2. Run the installer and press [next]
+
+3. Accept the terms and conditions and press [next]
+
+4. Select the preferred installation directory:
+
+5. Accept any succeeding prompts to continue with the installation.
+6. Restart your computer to complete the installation.
+
+

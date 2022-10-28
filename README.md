@@ -57,7 +57,7 @@ vagrant up
 
 4. During this process, Vagrant will make an Ubuntu instance in your virtual machine and download all that is
 necessary for Quorum. This will take a while, go grab that coffee and take a break.
-When Quorum is ready, you’ll see this:
+When Quorum is ready, you'll see a QUORUM written out in "/"'s on the command prompt.
 
 5. Now we have a virtual machine with everything needed to build Quorum network and you can access it with:
 vagrant ssh
@@ -66,6 +66,33 @@ vagrant ssh
 
     cd quorum-examples/7nodes
 7. Then, to add the consensus mechanism, we will use **raft** for this exercise.
-8. The following command will initialize the **raft** consensus.
+ The following command will initialize the **raft** consensus.
 
     ./raft-init.sh
+    
+8. After successful initialization, start the raft consensus and start the nodes:
+
+        ./raft-start.sh
+You might see some repeated messages like: Waiting until all Tessera nodes are running...
+This is normal. 
+
+Now, seven nodes are running in the network.
+
+9. Deploy a pre-defined contract with this script:
+
+        ./runscript.sh private-contract.js
+The output will be the transaction hash from the interaction.
+
+Take note of the transaction hash, you will need it later.
+Run the first node with:
+
+        geth attach qdata/dd1/geth.ipc
+An interactive Javascript terminal will start.
+
+10. Check the transaction details by providing the transaction hash.
+        
+        web3.eth.getTransactionReceipt(‘YOUR_TRANSACTION_HASH’)
+
+Take note of the contract address, you’ll need it later.
+Awesome. You have successfully deployed a contract on the private blockchain!
+

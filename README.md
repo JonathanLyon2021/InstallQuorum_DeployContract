@@ -42,4 +42,30 @@ If you encounter this after clicking on the installer file, click **More Info** 
 5. Accept any succeeding prompts to continue with the installation.
 6. Restart your computer to complete the installation.
 
+## 3. Install Quorum, Run Your Own Blockchain, and Deploy a Contract
+1. Before we proceed to launch Quorum, we need to clone the quorum-examples repository.
+Navigate to your preferred directory and launch a terminal on that location. Then, run this command:
 
+    git clone https://github.com/jpmorganchase/quorum-examples
+
+2. Navigate to the quorum-examples directory on the terminal.
+
+    cd quorum-examples
+
+3. Now, start a Vagrant instance in the folder.
+vagrant up
+
+4. During this process, Vagrant will make an Ubuntu instance in your virtual machine and download all that is
+necessary for Quorum. This will take a while, go grab that coffee and take a break.
+When Quorum is ready, you’ll see this:
+
+5. Now we have a virtual machine with everything needed to build Quorum network and you can access it with:
+vagrant ssh
+
+6. Now, go to the **quorum-example/7nodes.**
+
+    cd quorum-examples/7nodes
+7. Then, to add the consensus mechanism, we will use **raft** for this exercise.
+8. The following command will initialize the **raft** consensus.
+
+    ./raft-init.sh

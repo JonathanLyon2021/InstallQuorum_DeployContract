@@ -1,5 +1,5 @@
 # InstallQuorum_DeployContract
-This is Exercise 19 from MI4 in Kingsland Universities Blockchain Developer Program.
+This is Exercise 19 from MI4 in Kingsland Universities Blockchain Developer Program. This whole program is run completely using command prompts, sometimes 2 or 3 of them at a time.
 
 # Overview
 The goal of this exercise is to install and setup **Quorum**. Quorum is a **permissioned blockchain software** based on
@@ -11,16 +11,16 @@ blockchain network. This open-source development effort is headed by J.P. Morgan
 • Interact with the Quorum nodes on the virtual machine using Quorum samples.
 
 # Prerequisites
-• GIT v2.26.0^ https://git-scm.com/downloads
+• GIT v2.26.0^ *https://git-scm.com/downloads*
 • Virtual Box v6.1.2 https://www.virtualbox.org/wiki/Download_Old_Builds_6_1
-• Vagrant v2.2.7 https://releases.hashicorp.com/vagrant/2.2.7/
+• Vagrant v2.2.7 *https://releases.hashicorp.com/vagrant/2.2.7/*
 You may find that the instructions are primarily directed for Windows OS, if you are using other operating systems,
 the instructions should still be relatively similar especially on installation of required exercise dependencies. Do not
 hesitate to reach out to the course platform if you are encountering any issues.
 
 ## 1. Install VirtualBox
 1. We will use VirtualBox to create an instance of the private blockchain. Download VirtualBox from here
-https://www.virtualbox.org/wiki/Download_Old_Builds_6_1 and choose the version of your OS.
+*https://www.virtualbox.org/wiki/Download_Old_Builds_6_1* and choose the version of your OS.
 2. Run the installer wizard and press next.
 
 3. Press next on the Custom Setup tab.
@@ -30,7 +30,7 @@ https://www.virtualbox.org/wiki/Download_Old_Builds_6_1 and choose the version o
 5. Accept any succeeding prompts to continue with the installation.
 
 ## 2. Install Vagrant
-1. Go to https://releases.hashicorp.com/vagrant/2.2.7/ and download Vagrant for your OS.
+1. Go to *https://releases.hashicorp.com/vagrant/2.2.7/* and download Vagrant for your OS.
 If you encounter this after clicking on the installer file, click **More Info** and **Run Anyway:**
 
 2. Run the installer and press [next]

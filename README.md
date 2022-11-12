@@ -1,5 +1,5 @@
 # InstallQuorum_DeployContract
-This is Exercise 19 from MI4 in Kingsland Universities Blockchain Developer Program. This whole program is run completely using command prompts, sometimes 2 or 3 of them at a time.
+This is Exercise 19 from MI4 in Kingsland Universities Blockchain Developer Program. This whole program is run completely using command prompts, sometimes 2 or 3 of them at a time. Although there is no actual code to run this program, running the comands in the terminal, spinning up the nodes, and making everything work together is very rewarding and educational. NOTE: I could not get the last part of this exercise running where I needed multiple Quorom nodes running(where is asks to run nodes 2 & 7 in separate terminals), just want to be clairvoyant with the user here, in case this happens to them in the same manner.
 
 # Overview
 The goal of this exercise is to install and setup **Quorum**. Quorum is a **permissioned blockchain software** based on
@@ -81,12 +81,14 @@ Now, seven nodes are running in the network.
 9. Deploy a pre-defined contract with this script:
 
         ./runscript.sh private-contract.js
+
 The output will be the transaction hash from the interaction.
 
 Take note of the transaction hash, you will need it later.
 Run the first node with:
 
         geth attach qdata/dd1/geth.ipc
+
 An interactive Javascript terminal will start.
 
 10. Check the transaction details by providing the transaction hash.
@@ -108,6 +110,7 @@ following commands:
 In terminal 2, run node 2:
 
         geth attach ipc:qdata/dd2/geth.ipc
+
 In terminal 3, run node 7:
 
         geth attach ipc:qdata/dd7/geth.ipc
@@ -129,6 +132,7 @@ Looking good so far? Awesome!
 3. Now go to terminal 1 and call the get() method of the contract.
 
         contract.get()
+
 The output will be 42.
 
 4. Interact with the contract by calling the **set()** function. Use the **first** terminal.
@@ -143,9 +147,11 @@ After the **set()** interaction, run **contract.get()** on each terminal:
 The **first** terminal the output will be.
 
         Output : 1234
+
 If you open the second terminal, the output will be zero, because the data is hidden for him:
 
         Output : 0
+
 If you open the third terminal where we allow access to the transaction, you will see the number that we expect.
 
         Output : 1234
